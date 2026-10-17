@@ -1,0 +1,106 @@
+[gd_scene load_steps=4 format=3]
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_hud"]
+[ext_resource type="Script" path="res://scripts/virtual_joystick.gd" id="2_joy"]
+[ext_resource type="Script" path="res://scripts/look_pad.gd" id="3_look"]
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_hud")
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+[node name="Stats" type="Control" parent="Root"]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 400.0
+offset_bottom = 220.0
+[node name="VBox" type="VBoxContainer" parent="Root/Stats"]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 1.0
+[node name="HP" type="Label" parent="Root/Stats/VBox"]
+text = "HP: 100"
+[node name="Ammo" type="Label" parent="Root/Stats/VBox"]
+text = "AMMO: 12 / 12"
+[node name="Wave" type="Label" parent="Root/Stats/VBox"]
+text = "WAVE: 1 / 10"
+[node name="Enemies" type="Label" parent="Root/Stats/VBox"]
+text = "ENEMIES: 0"
+[node name="LookPad" type="Control" parent="Root"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 0.35
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+script = ExtResource("3_look")
+[node name="Joystick" type="Control" parent="Root"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = -400.0
+offset_right = 400.0
+offset_bottom = 0.0
+mouse_filter = 1
+script = ExtResource("2_joy")
+[node name="FireButton" type="Button" parent="Root"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -220.0
+offset_top = -220.0
+offset_right = -40.0
+offset_bottom = -40.0
+text = "FIRE"
+[node name="ReloadButton" type="Button" parent="Root"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -360.0
+offset_top = -220.0
+offset_right = -240.0
+offset_bottom = -140.0
+text = "RELOAD"
+[node name="JumpButton" type="Button" parent="Root"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -220.0
+offset_top = -320.0
+offset_right = -120.0
+offset_bottom = -240.0
+text = "JUMP"
+[node name="GameOverPanel" type="Panel" parent="Root"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -80.0
+offset_right = 300.0
+offset_bottom = 80.0
+[node name="GameOverLabel" type="Label" parent="Root/GameOverPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+horizontal_alignment = 1
+vertical_alignment = 1
+text = "GAME OVER"
