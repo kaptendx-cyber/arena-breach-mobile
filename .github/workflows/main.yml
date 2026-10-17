@@ -11,6 +11,7 @@ jobs:
         with:
           version: 4.3.0
           use-dotnet: false
+          export-templates: true
       - name: Build APK
         run: |
           mkdir -p build
