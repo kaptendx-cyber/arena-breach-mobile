@@ -1,0 +1,33 @@
+extends Node
+
+const PLAYER_MAX_HEALTH: int = 100
+const PLAYER_SPEED: float = 6.0
+const PLAYER_JUMP_VELOCITY: float = 7.0
+const PLAYER_PITCH_MIN: float = deg_to_rad(-80)
+const PLAYER_PITCH_MAX: float = deg_to_rad(80)
+const PLAYER_HEIGHT: float = 1.8
+const TOUCH_LOOK_SENSITIVITY: float = 0.006
+const JOYSTICK_RADIUS_PX: float = 120.0
+const JOYSTICK_DEADZONE: float = 0.15
+const WEAPON_DAMAGE: int = 25
+const WEAPON_FIRE_RATE: float = 0.15
+const WEAPON_MAG_SIZE: int = 12
+const WEAPON_RELOAD_TIME: float = 1.5
+const WEAPON_BULLET_SPEED: float = 60.0
+const ENEMY_BASE_HEALTH: int = 50
+const ENEMY_SPEED: float = 3.0
+const ENEMY_DAMAGE: int = 10
+const ENEMY_ATTACK_RANGE: float = 2.2
+const ENEMY_ATTACK_COOLDOWN: float = 1.0
+const WAVE_BASE_COUNT: int = 3
+const WAVE_COUNT_MULT: int = 2
+const WAVE_MAX: int = 10
+const WAVE_INTERMISSION: float = 3.0
+const SPAWN_RADIUS: float = 18.0
+const SPAWN_INTERVAL: float = 0.4
+const ARENA_SIZE: float = 40.0
+const ARENA_WALL_HEIGHT: float = 6.0
+const ARENA_WALL_THICKNESS: float = 1.0
+const OBSTACLE_COUNT: int = 6
+const SCENE_ENEMY: String = "res://scenes/enemy.tscn"
+const SCENE_BULLET: String = "res://scenes/bullet.tscn"
