@@ -1,0 +1,22 @@
+name: Build Godot APK
+on: [push, workflow_dispatch]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup Godot
+        uses: chickensoft-games/setup-godot@v1
+        with:
+          version: 4.3.0
+          use-dotnet: false
+      - name: Build APK
+        run: |
+          mkdir -p build
+          godot --headless --path . --export-debug "Android" build/arena-breach.apk
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: arena-breach-apk
+          path: build/arena-breach.apk
