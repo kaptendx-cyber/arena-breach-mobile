@@ -18,6 +18,14 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
+    - name: Auto-Fix Code Formatting
+      run: |
+        # 1. Ubah semua 4-spasi jadi 1 Tab di semua file .gd
+        find . -name "*.gd" -exec sed -i 's/    /\t/g' {} +
+        
+        # 2. Hapus spasi di config/name project.godot
+        sed -i 's/config\/name="Arena Breach Mobile"/config\/name="ArenaBreachMobile"/g' project.godot
+
     - name: Download Godot & Extract Android Template
       run: |
         wget -q https://github.com/godotengine/godot/releases/download/4.3-stable/Godot_v4.3-stable_linux.x86_64.zip
@@ -29,7 +37,6 @@ jobs:
         unzip -q Godot_v4.3-stable_export_templates.tpz
         mkdir -p ~/.local/share/godot/export_templates/4.3.stable
         mv templates/* ~/.local/share/godot/export_templates/4.3.stable/
-        
         mkdir -p android
         unzip -q ~/.local/share/godot/export_templates/4.3.stable/android_source.zip -d android/
         rm -rf templates Godot_v4.3-stable_export_templates.tpz
